@@ -1,8 +1,9 @@
 import createHomepage from "./home.js";
+import createMenu from "./menu.js";
 
 const initializeWebsite = () => {
   const nav = document.querySelector('nav');
-  const content = document.querySelector('content');
+  const content = document.getElementById('content');
 
   const homeBtn = document.createElement('button');
   homeBtn.textContent = 'Home';
