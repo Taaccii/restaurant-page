@@ -1,5 +1,6 @@
 import createHomepage from "./home.js";
 import createMenu from "./menu.js";
+import createInfo from "./info.js";
 
 const initializeWebsite = () => {
   const nav = document.querySelector('nav');
