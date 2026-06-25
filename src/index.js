@@ -1,3 +1,4 @@
+import './style.css';
 import createHomepage from "./home.js";
 import createMenu from "./menu.js";
 import createInfo from "./info.js";
@@ -24,20 +25,31 @@ const initializeWebsite = () => {
 
   content.appendChild(createHomepage());
 
+  const setActivationButton = (activeBtn) => {
+    const buttons = [homeBtn, menuBtn, infoBtn];
+    buttons.forEach(btn => btn.classList.remove('active'));
+    activeBtn.classList.add('active');
+  };
+
   homeBtn.addEventListener('click', () => {
+    setActivationButton(homeBtn);
     content.innerHTML = '';
     content.appendChild(createHomepage());
   });
 
   menuBtn.addEventListener('click', () => {
+    setActivationButton(menuBtn);
     content.innerHTML = '';
     content.appendChild(createMenu());
   });
 
   infoBtn.addEventListener('click', () => {
+    setActivationButton(infoBtn);
     content.innerHTML = '';
     content.appendChild(createInfo());
   });
+
+  setActivationButton(homeBtn);
 
 };
 
